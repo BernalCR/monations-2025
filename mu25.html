@@ -1,0 +1,803 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<style>
+    :root{
+        --dark-fuchsia: #AD2B60;
+        --light-fuchsia: #d74d85;
+        --notch-position: -9px; 
+        --dark-blue: #03315B;
+        --background-frame-padding: max(1.5vw, 2rem);
+        --beige: #EAE1DA;
+        --light-beige: #fcf6f2; 
+        --gap-top-page: 10rem;
+        /* --primary-gradient:; */
+    }
+    
+    @media (max-width: 700px) {
+        :root {
+            --gap-top-page: 9rem;
+        }
+    }
+</style>
+
+<div id="overlayH" class="closeHam"></div>
+<!-- location modal -->
+<div id="location_container" class="display_flex flex_center">
+    <div id="location_modal">
+        <div id="module_location_title">
+            <h2 id="location_title" class="Post_Grotesk_Medium txt_center">Choose Your Location</h2>
+        </div>
+        <div id="box_flags">
+            <a href="https://monations.com/us-es/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/au/wp-content/uploads/sites/12/2022/07/usa-falg.jpg" alt="UNITED STATES flag" loading="lazy">
+                    <p>UNITED STATES<br> <span>Español</span></p>
+                </div>
+            </a>
+            <a href="https://monations.com/ca/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/wp-content/uploads/sites/6/2021/07/canada-flag.png" alt="Canada flag" loading="lazy">
+                    <p>CANADA<br> <span>English</span></p>
+                </div>
+            </a>
+            <a href="https://monations.com/ca-fr/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/wp-content/uploads/sites/6/2021/07/canada-flag.png" alt="Canada flag" loading="lazy">
+                    <p>CANADA<br> <span>Français</span></p>
+                </div>
+            </a>
+            <a href="https://monations.com/uk/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/wp-content/uploads/sites/6/2021/07/uk-flag-.png" alt="United Kingdom flag" loading="lazy">
+                    <p>UNITED KINGDOM</p>
+                </div>
+            </a>
+            <a href="https://monations.com/ie/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/wp-content/uploads/sites/6/2021/07/ireland-flag.png" alt="Ireland flag" loading="lazy">
+                    <p>IRELAND</p>
+                </div>
+            </a>
+            <a href="https://monations.com/de/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/de/wp-content/uploads/sites/22/2024/12/german-falg.jpg" alt="Germany flag" loading="lazy">
+                    <p>DEUTSCHLAND<br></p>
+                </div>
+            </a>
+            <a href="https://monations.com/be-fr/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/be/wp-content/uploads/sites/23/2024/12/Belgium-falg.jpg" alt="BELGIUM flag" loading="lazy">
+                    <p>BELGIQUE<br> <span>Français</span></p>
+                </div>
+            </a>
+            <a href="https://monations.com/be-nl/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/be/wp-content/uploads/sites/23/2024/12/Belgium-falg.jpg" alt="BELGIUM flag" loading="lazy">
+                    <p>BELGIË<br> <span>Nederlands</span></p>
+                </div>
+            </a>
+            <a href="https://monations.com/fr/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/wp-content/uploads/sites/19/2023/02/france-flag-.jpg" alt="France flag" loading="lazy">
+                    <p>FRANCE</p>
+                </div>
+            </a>
+            <a href="https://monations.com/es/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/wp-content/uploads/sites/6/2021/07/spain-flag.png" alt="España flag" loading="lazy">
+                    <p>ESPAÑA</p>
+                </div>
+            </a>
+            <a href="https://monations.com/pl/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/wp-content/uploads/sites/6/2021/07/Polish-flag.png" alt="Polska flag" loading="lazy">
+                    <p>POLSKA</p>
+                </div>
+            </a>
+            <a href="https://monations.com/lt/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/wp-content/uploads/2021/08/Lietuva-flag.png" alt="Lietuva Flag" loading="lazy">
+                    <p>LIETUVA</p>
+                </div>
+            </a>
+            <a href="https://monations.com/au/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/wp-content/uploads/2021/09/Australia-flag.png" alt="Australia Flag">
+                    <p>AUSTRALIA</p>
+                </div>
+            </a>
+            <a href="https://monations.com/nz/">
+                <div class="module_flag display_flex a_i_center">
+                    <img decoding="async" src="https://monatglobal.com/wp-content/uploads/2022/09/NZ-flag.jpg" alt="New Zealand Flag" loading="lazy">
+                    <p>NEW ZEALAND</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<div id="ham_canvas">
+    <div>
+        <div class="display_flex a_i_center j_c_flex_end hide_mobile"> 
+            <img decoding="async" class="currentLocation" alt="UNITED STATES flag" src="https://monatglobal.com/au/wp-content/uploads/sites/12/2022/07/usa-falg.jpg" loading="lazy">
+            <img class="closeHam" src="https://monatglobal.com/wp-content/uploads/2025/06/close-icon-mu-2025.svg" alt="close icon" loading="lazy">
+        </div>
+    
+        <ul class="margin_top_15 scrollLinks margin_top_0_mobile">
+            <li data-link="venue">VENUE</li>
+            <li data-link="agenda">AGENDA</li>
+            <li data-link="speakers">SPEAKERS</li>
+            <li data-link="rooms">ROOMS</li>
+            <li data-link="flights">FLIGHTS</li>
+            <li data-link="recognition">RECOGNITION</li>
+            <li class="tagNew"> <a style="color:#fff" target="_blank" href="http://monations.com/wp-content/uploads/2025/08/US_ENG_MU25-Prohibited-items-81225_V6.pdf">BAG POLICY</a></li>
+      
+        </ul>
+    
+        <a class="underline_links travel_link" data-link="travel-details">TRAVEL DETAILS</a>
+        <a href="https://monations.com/wp-content/uploads/2025/06/PROPERTY-MAP-1.pdf" target="_blank" aria-label="download venue map" class="underline_links">SEE VENUE MAP</a>
+        
+        <div id="canvas_ticket_row" class="display_flex a_i_center">
+            <img src="https://monatglobal.com/wp-content/uploads/2025/06/monations-ticket-2025-min.png" alt="MONATions 2025 ticket graphic">
+            <div> 
+                <p><span class="strikethrough">$289 USD</span> <span>$289 USD</span> <br> INDIVIDUAL <br> REGISTRATION</p>
+                <a href="https://monat.swoogo.com/MU25" target="_blank" class="monations_btn blue">REGISTER</a> 
+            </div> 
+        </div>
+    
+        <div class="display_flex j_c_space_between a_i_flex_end">
+            <div id="social_row" class="display_flex a_i_center">
+                <a href="https://www.instagram.com/monatofficial/" target="_blank" aria-label="Monat global instagram" loading="lazy">
+                    <img decoding="async" alt="instagram icon" class="social_icons" src="https://monatglobal.com/wp-content/uploads/2022/08/instagramIcon.svg" loading="lazy">
+                </a>
+                <a href="https://www.facebook.com/monatofficial" target="_blank" aria-label="Monat global facebook" loading="lazy">
+                    <img decoding="async" alt="facebook icon" class="social_icons" src="https://monatglobal.com/wp-content/uploads/2022/08/facebookIcon.svg" loading="lazy">
+                </a>
+                <a href="https://www.youtube.com/user/MONATOfficial" target="_blank" aria-label="Monat global youtube">
+                    <img decoding="async" alt="youtube icon" class="social_icons" src="https://monatglobal.com/wp-content/uploads/2022/08/youtubeIcon.svg" loading="lazy">
+                </a>
+            </div>
+    
+            <div> 
+                <a class="underline_links" href="https://monations.com/wp-content/uploads/2025/03/US_ENG_MU25-FAQs-2725_V5-1.pdf" target="_blank">FAQ</a>
+                <a class="underline_links" href="https://monations.com/wp-content/uploads/2024/09/US_ENG_MONATions_2025_Terms__Conditions_09092024_V6.pdf" target="_blank">TERMS & CONDITIONS</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header id="monations-header">
+    <div class="col_90 width_margin_mobile margin_auto display_flex j_c_space_between p_relative">
+        <div id="monations-header__nav" class="col_100 display_flex a_i_center j_c_space_between">
+            <ul class="monations-header__nav-list display_flex hide_just_desk scrollLinks" style="z-index: 10;">
+                <li data-link="venue">VENUE</li>
+                <li data-link="agenda">AGENDA</li>
+                <li data-link="speakers">SPEAKERS</li>
+                <li class="tagNew"> <a style="color:#03315b" target="_blank" href="http://monations.com/wp-content/uploads/2025/08/US_ENG_MU25-Prohibited-items-81225_V6.pdf">BAG POLICY</a></li>
+                
+            </ul>
+            
+            <div id="monations-header__logo-box" class="display_flex a_i_center j_c_center"><a data-link="hero"><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/Monations-united-2025-gold.svg" alt="MONATions logo " loading="lazy"></a></div>
+            
+            <div id="monations-header__right-nav" class="display_flex a_i_center" style="z-index: 10;">
+                <ul class="monations-header__nav-list display_flex hide_just_desk scrollLinks">
+                    <li data-link="rooms">ROOMS</li>
+                    <li data-link="flights">FLIGHTS</li>
+                </ul>  
+                
+                <a href="https://monat.swoogo.com/MU25" target="_blank" class="monations_btn blue hide_just_desk">REGISTER</a>
+                
+                <img decoding="async" class="currentLocation" alt="UNITED STATES flag" src="https://monatglobal.com/au/wp-content/uploads/sites/12/2022/07/usa-falg.jpg" loading="lazy">
+                
+                <svg id="monations-header__ham-icon" viewBox="0 0 100 100" width="80" class="">
+                    <path class="line top" d="m 30,35 h 40"></path>
+                    <path class="line middle" d="m 30,50 h 40"></path>
+                    <path class="line bottom" d="m 30,65 h 40"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="smooth-wrapper">
+    <div id="smooth-content">
+        <section id="topFiller"></section>
+        <section id="hero"> 
+            <div class="display_flex flex_center f_d_column_reverse_mobile">  
+                <div class="col_100_mobile txt_center_mobile">
+                    <h2 class="section_title">Resorts <br> World <br> Las Vegas</h2>
+                    <p class="margin_top_20">A GRAND VENUE. <br>A LUXURIOUS NEW HOTEL.</p>
+                    <a href="https://monat.swoogo.com/MU25" target="_blank" class="monations_btn fuchsia margin_top_20 margin_auto_mobile">REGISTER</a>
+                </div>
+                <div class="hero_img_box col_100_mobile">
+                    <img src="https://monatglobal.com/wp-content/uploads/2025/06/resorts-world-las-vegas-main-banner-min.jpg" alt="Resorts world Las Vegas facade" loading="lazy">
+                    <p>AUGUST 21−24, 2025</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="stage" class="txt_center">
+            <p class="txt_w medium_txt">MONATIONS' 25</p>
+            <h2 class="section_title">THE STAGE <br> IS SET.</h2>
+            
+            <div id="stage_video" class="p_relative display_flex flex_center col_90">
+                <video class="video_slide" src="https://monatglobal.com/wp-content/uploads/2025/06/MU25-video-banner-copy.mp4" loop muted autoplay></video>
+                <img class="stage__fallback-img" src="https://monatglobal.com/wp-content/uploads/2024/11/products-that-actually-work_img-web-min.jpg" loading="lazy" alt="">
+                <img  data-lbxp-iframe="https://www.youtube-nocookie.com/embed/x67B1b_9cJc" decoding="async" class="play_btn display_block margin_auto" src="https://monatglobal.com/wp-content/uploads/2019/11/play-btn-shadow.png" loading="lazy" alt="play icon" >
+            </div>
+            
+            <div class="col_80 margin_auto margin_mobile" style="max-width: 100rem;"> 
+                <p class="medium_txt txt_w">HOST TO THE MOST ICONIC PERFORMERS OF OUR TIME, RESORTS WORLD LAS VEGAS IS NOW YOUR VENUE.</p>
+                <p class="txt_w">A setting that’s intimate and immersive— yet luxurious and grand. Where every seat is the best in the house. Be part of the all-new MONATions experience that’s sure to sell out fast. Make your plans now!</p>
+            </div>
+        </section>
+        
+        <div id="ticket_count_bkgnd">
+            <section id="ticket" class="p_relative display_flex j_c_space_between a_i_stretch">
+                <div class="vertical-text left-text uppercase"><p><span>August 21−24, 2025</span></p></div>
+                
+                <div id="ticket__content" class="display_flex flex_wrap_mobile flex_center"> 
+                    <div id="box_ticket" class="p_relative"> 
+                        <img decoding="async" id="front_ticket" class="col_100" src="https://monatglobal.com/wp-content/uploads/2025/06/monations-ticket-2025-min.png" alt="MONATions 2025 ticket" loading="lazy">
+                        <img decoding="async" id="back_ticket" class="col_100" src="https://monatglobal.com/wp-content/uploads/2025/06/monations-ticket-2025-min.png" alt="MONATions 2025 ticket" loading="lazy">
+                    </div>
+                    
+                    <div class="col_100_mobile margin_top_40_mobile">
+                        <h3 class="section_mediumTitle txt_center_mobile"><span class="strikethrough ">$289 USD</span><div class="highlight_box"><img src="https://monatglobal.com/wp-content/uploads/2025/06/red-highlight.svg" class="highlight" alt="red highlight" loading="lazy"><span class="txt">$289 USD</span></div><br> INDIVIDUAL <br>REGISTRATION</h3>
+                        <a href="https://monat.swoogo.com/MU25" target="_blank" class="monations_btn fuchsia margin_top_30 margin_auto_mobile">REGISTER</a>
+                    </div>
+                </div>
+                
+                <div class="vertical-text right-text uppercase"><p><span>Resorts World Las Vegas</span></p></div>
+            </section>
+            
+            <section id="countdown">
+                <img class="margin_auto display_block" src="https://monatglobal.com/wp-content/uploads/2025/06/MONATions-2025-logo-cream.svg" alt="MONATions-2025 logo cream" loading="lazy">
+                
+            	<div class='countdown_box display_flex j_c_center'>
+            		<div class='card days'>
+            			<div class='countdown__flip-card'>
+            				<div class='top-half'><span>00</span></div>
+            				<div class='bottom-half'><span>00</span></div>
+            			</div>
+            			<p>Days</p> 
+            		</div>
+            
+            		<div class='card hours'>
+            			<div class='countdown__flip-card'>
+            				<div class='top-half'><span>00</span></div>
+            				<div class='bottom-half'><span>00</span></div>
+            			</div>
+            			<p>Hours</p>
+            		</div>
+            
+            		<div class='card minutes'>
+            			<div class='countdown__flip-card'>
+            				<div class='top-half'><span>00</span></div>
+            				<div class='bottom-half'><span>00</span></div>
+            			</div> 
+            			<p>Minutes</p>
+            		</div>
+            
+            		<div class='card seconds'>
+            			<div class='countdown__flip-card'>
+            				<div class='top-half'><span>00</span></div>
+            				<div class='bottom-half'><span>00</span></div>
+            			</div>
+            			<p>Seconds</p>
+            		</div>
+            	</div>
+            </section>
+        </div>
+         
+        <section id="speakers">
+            <h2 class="section_title txt_center">Speakers</h2>
+            
+            <div id="speakers_row" class="display_flex j_c_space_between flex_wrap col_80 margin_auto col_90_tablet margin_mobile margin_top_medium">
+                <div class="col_30">
+                    <img src="https://monatglobal.com/wp-content/uploads/2025/06/Ray-Urdaneta-MONATions-2025-min.png" alt="Speaker Ray-Urdaneta-MONATions-2025" loading="lazy">
+                    <p  class="monations_btn blue margin_auto margin_top_10 skip_hover"><span>CHIEF EXECUTIVE OFFICER </span></p>
+                    <p  class="monations_btn blue margin_auto skip_hover"><span> AND CO-FOUNDER</span></p>
+                </div> 
+                <div class="col_30">
+                    <img src="https://monatglobal.com/wp-content/uploads/2025/06/sr-Luis-Urdaneta-MONATions-2025-min.png" alt="Speaker sr Luis-Urdaneta MONATions 2025" loading="lazy">
+                    <p class="monations_btn blue margin_auto margin_top_10 skip_hover"><span>CHAIRMAN AND</span></p>
+                    <p class="monations_btn blue margin_auto skip_hover"><span> CO-FOUNDER</span></p>
+                </div>
+                <div class="col_30">
+                    <img src="https://monatglobal.com/wp-content/uploads/2025/06/Lu-Urdaneta-MONATions-2025-min.png" alt="Speaker sr Lu Urdaneta MONATions 2025" loading="lazy">
+                    <p class="monations_btn blue margin_auto margin_top_10 skip_hover"><span>CHIEF CULTURE </span></p>
+                    <p class="monations_btn blue margin_auto skip_hover"><span> OFFICER</span></p>
+                </div>
+            </div>
+            <div id="speakers_row" class="display_flex j_c_space_between flex_wrap col_80 margin_auto col_90_tablet margin_mobile margin_top_medium">
+                <div class="col_30">
+                    <img src="http://monations.com/wp-content/uploads/2025/07/Daniel-g-MONATions-2025-min.png" alt="Speaker Ray-Urdaneta-MONATions-2025" loading="lazy">
+                </div> 
+                <div class="col_30">
+                    <img src="http://monations.com/wp-content/uploads/2025/07/Belkis-Carrillo-MONATions-2025-min.png" alt="Speaker sr Luis-Urdaneta MONATions 2025" loading="lazy">
+                </div>
+                <div class="col_30">
+                    <img src="http://monations.com/wp-content/uploads/2025/07/Erwin-Raphael-McManus-MONATions-2025-min.png" alt="Speaker sr Lu Urdaneta MONATions 2025" loading="lazy">
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <div>
+                <div id="experience__top-imgs" class="margin_auto display_flex j_c_space_between a_i_flex_end">
+                    <img class="img_animation" src="https://monatglobal.com/wp-content/uploads/2025/06/HiltonLifestyle-19-1.png" alt="A woman in a bathrobe draws open the curtains of a luxurious suite" loading="lazy">
+                    <img class="img_animation" src="https://monatglobal.com/wp-content/uploads/2025/06/Vector.png" alt="picture of a beautiful and luxurious hotel room" loading="lazy">
+                </div> 
+                
+                <div class="p_relative" style="z-index: 1;">
+                    <img class="oil-drop_logo margin_auto display_block" src="https://monatglobal.com/wp-content/uploads/2018/05/01.-Managing-market-partner.png" alt="oil drop logo" loading="lazy" >
+                    <h2 class="section_title txt_center margin_top_20">Where Your <br>Experience <br>Becomes Legend.</h2>
+                    <p class="txt_center medium_txt txt_w margin_top_20">DISCOVER THE LUXURY OF <br> RESORTS WORLD <br>LAS VEGAS.</p>
+                    <a href="https://monat.swoogo.com/MU25" target="_blank" class="monations_btn blue margin_auto margin_top_30">REGISTER</a>
+                </div>
+                
+                <div id="experience__bottom-imgs" class="margin_auto display_flex j_c_space_between a_i_flex_start">
+                    <img class="img_animation" src="https://monatglobal.com/wp-content/uploads/2025/06/Vector-1.png" alt="picture of resort pool" loading="lazy">
+                    <img class="img_animation" src="https://monatglobal.com/wp-content/uploads/2025/06/Vector-2.png" alt="picture entertainment ven" loading="lazy">
+                </div>
+                <!--<img class="p_absolute" src="">-->
+                <!--<img class="p_absolute" src="">-->
+                <!--<img class="p_absolute" src="">-->
+                <!--<img class="p_absolute" src="">--> 
+            </div>
+        </section>
+        
+        <div id="logistics-group">
+            <section id="venue">
+                <h2 class="section_title txt_center padding_y_medium">VENUE</h2>
+                
+                <div style="overflow: hidden;">
+                    <div class="swiper mySwiper"> 
+                        <div class="swiper-wrapper"> 
+                            <div class="swiper-slide parent_panel">
+                                <div class="text_panel">
+                                    <p>Luxuriously appointed guest rooms in the Las Vegas Hilton at Resorts World</p>
+                                </div>
+                                <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/appointed-guest-rooms-min.jpg" alt="picture of appointed guest room" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide parent_panel">
+                                <div class="text_panel">
+                                    <p>46 dining, lounge, and entertainment venues</p>
+                                </div>
+                                <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/lounge-venues-MONATions-2025-min.jpg" alt="picture of dining, lounge, and entertainment venues" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide parent_panel">
+                                <div class="text_panel">
+                                    <p>8 swimming pools</p>
+                                </div>
+                                <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/8-swiming-pools-MONATions-2025-min.jpg" alt="picture of resot pool" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide parent_panel">
+                                <div class="text_panel">
+                                    <p>Onsite mall with 35,000 square feet of world-class shopping</p>
+                                </div>
+                                <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/onsite-mall-MONATions-2025-min.jpg"  alt="picture two women shopping" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide parent_panel">
+                                <div class="text_panel">
+                                    <p>No venue seat farther than 150 feet from the stage</p>
+                                </div>
+                                <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/stage-MONATions-2025-min.jpg" alt="resort world Las Vegas stage" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide parent_panel">
+                                <div class="text_panel">
+                                    <p>Onsite spa & salon services</p>
+                                </div>
+                                <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/onsite-spa-MONATions-2025-min.jpg" alt="picture of women getting a spa treatment" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev arrow"></div>
+                        <div class="swiper-button-next arrow"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                
+                <!--<div id="panels_container">-->
+                <!--    <div class="parent_panel">-->
+                <!--        <div class="text_panel">-->
+                <!--            <p>Luxuriously appointed guest rooms in the Las Vegas Hilton at Resorts World</p>-->
+                <!--        </div>-->
+
+                <!--        <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/appointed-guest-rooms-min.jpg">-->
+                <!--    </div>-->
+                    
+                <!--    <div class="parent_panel">-->
+                <!--        <div class="text_panel">-->
+                <!--            <p>46 dining, lounge, and entertainment venues</p>-->
+                <!--        </div>-->
+                <!--        <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/lounge-venues-MONATions-2025-min.jpg">-->
+                <!--    </div>-->
+                    
+                <!--    <div class="parent_panel">-->
+                <!--        <div class="text_panel">-->
+                <!--            <p>8 swimming pools</p>-->
+                <!--        </div>-->
+                <!--        <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/8-swiming-pools-MONATions-2025-min.jpg">-->
+                <!--    </div>-->
+                    
+                <!--    <div class="parent_panel">-->
+                <!--        <div class="text_panel">-->
+                <!--            <p>Onsite mall with 35,000 square feet of world-class shopping</p>-->
+                <!--        </div>-->
+                <!--        <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/onsite-mall-MONATions-2025-min.jpg">-->
+                <!--    </div>-->
+                    
+                <!--    <div class="parent_panel">-->
+                <!--        <div class="text_panel">-->
+                <!--            <p>No venue seat farther than 150 feet from the stage</p>-->
+                <!--        </div>-->
+                <!--        <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/stage-MONATions-2025-min.jpg">-->
+                <!--    </div>-->
+                    
+                <!--    <div class="parent_panel">-->
+                <!--        <div class="text_panel">-->
+                <!--            <p>Onsite spa & salon services</p>-->
+                <!--        </div>-->
+                <!--        <img class="img_panel" src="https://monatglobal.com/wp-content/uploads/2025/06/onsite-spa-MONATions-2025-min.jpg">-->
+                <!--    </div>-->
+
+                <!--</div>-->
+            </section>
+            <!--<section id="rooms">-->
+            <!--    <h2 class="section_title txt_center padding_y_medium">Rooms</h2>-->
+            <!--    <div class="col_80 margin_auto display_flex flex_wrap_mobile j_c_space_between a_i_center"> -->
+            <!--        <div class="half_col col_100_mobile display_flex j_c_flex_end">-->
+            <!--            <img src="https://monatglobal.com/wp-content/uploads/2025/06/Vector-3.png" alt="picture of hotel room" loading="lazy">-->
+            <!--        </div>-->
+                    
+            <!--        <div class="half_col col_100_mobile margin_top_30_mobile">-->
+            <!--            <h2 class="section_mediumTitle txt_center_mobile">Rates starting<br> at <span class="strikethrough skip">$206 USD</span><div class="highlight_box"><img src="https://monatglobal.com/wp-content/uploads/2025/06/red-highlight.svg" alt="red highlight" loading="lazy" class="highlight"><span class="txt">$155 USD/</span></div> <br> night!</h2>-->
+            <!--            <a href="https://book.passkey.com/go/MONATions25" target="_blank" class="monations_btn fuchsia margin_top_30 margin_auto_mobile">BOOK YOUR ROOM</a>-->
+            <!--        </div> -->
+            <!--    </div>-->
+            <!--</section>-->
+            
+                        <section id="rooms">
+                <h2 class="section_title txt_center padding_y_medium">Rooms</h2>
+                <div class="col_80 margin_auto display_flex flex_wrap_mobile j_c_space_between a_i_center"> 
+                    <div class="half_col col_100_mobile display_flex j_c_flex_end">
+                        <img src="https://monatglobal.com/wp-content/uploads/2025/06/Vector-3.png" alt="picture of hotel room" loading="lazy">
+                    </div>
+                    
+                    <div class="half_col col_100_mobile margin_top_30_mobile">
+                        <h2 class="section_mediumTitle txt_center_mobile">Rooms are available at Hilton or Conrad</h2>
+                        <a href="https://book.passkey.com/e/50993527" target="_blank" class="monations_btn fuchsia margin_top_30 margin_auto_mobile">BOOK YOUR ROOM</a>
+                    </div> 
+                </div>
+            </section>
+            
+            <section id="flights">
+                <h2 class="section_title txt_center padding_y_medium">Flights</h2>
+                <div class="col_80 margin_auto display_flex flex_wrap_mobile j_c_space_between a_i_center"> 
+                    <div class="half_col col_100_mobile display_flex j_c_flex_end">
+                        <img src="https://monatglobal.com/wp-content/uploads/2025/06/southwest-MONATions-2025-min.jpg" alt="picture of a woman looking out an airplane window" loading="lazy">
+                    </div>
+                      
+                    <div class="half_col col_100_mobile txt_center_mobile margin_top_30_mobile"> 
+                        <h2 class="medium_txt">Southwest Airlines is pleased to offer MONATIONS UNITED 2025 attendees discounted fares.</h2>
+                        <p class="txt_w margin_top_20 Jost-Regular">To utilize the discount, book via SWABIZ® using <a href="https://www.swabiz.com/air/booking/index.html?companyId=99722313" target="_blank">this link.</a></p>
+                        <a href="https://www.swabiz.com/air/booking/index.html?companyId=99722313" target="_blank" class="monations_btn fuchsia margin_top_20 margin_auto_mobile">BOOK YOUR FLIGHTS</a>
+                        <p class="margin_top_30 Jost-Light txt_w"><em>Discount valid for travel 8/18/2025 to 8/27/2025.</em></p> 
+                    </div> 
+                </div>
+            </section>
+        </div>
+        
+        <section id="agenda">
+            <h2 class="section_title txt_center">AGENDA</h2>
+            
+            <div id="agendaBox" class="accordion-container col_80 col_90_tablet margin_mobile margin_auto margin_top_40"> 
+                <!-- Día 1 -->
+                <div class="accordionItem active agenda_box" id="day1">
+                    <div class="accordionHeader">
+                        <h3>WEDNESDAY</h3>
+                        <div class="display_flex a_i_center">
+                            <p>August 20, 2025</p>
+                            <span class="accordionIcon"></span>
+                        </div>
+                    </div>
+                    <div class="accordionContent">
+                        <div> 
+                            <h4>The MONAT HUB</h4> 
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">3:00–7:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Perdana Garden, The District, Level 2,&nbsp;</span> Resorts World Las Vegas</p>
+        
+                            <h4>Directors’ Registration</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">3:00–6:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Perdana Garden, The District, Level 2,&nbsp;</span> Resorts World Las Vegas</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Día 2 -->
+                <div class="accordionItem agenda_box" id="day2">
+                    <div class="accordionHeader">
+                        <h3>THURSDAY</h3>
+                        <div class="display_flex a_i_center">
+                            <p>August 21, 2025</p>
+                            <span class="accordionIcon"></span>
+                        </div>
+                    </div>
+                    <div class="accordionContent">
+                        <div> 
+                            <h4>The MONAT HUB</h4> 
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">10:00 a.m.–8:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Perdana Garden, The District, Level 2,&nbsp;</span> Resorts World Las Vegas</p>
+        
+                            <h4>Badge Pickup</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">10:00 a.m.–8:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Perdana Garden, The District, Level 2,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            <h4>GEAR Store</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">10:00 a.m.–8:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>RW Theatre Store, Level 1,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            <h4>Hispanic Market Session – Impulso Latino</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">1:30–4:30 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>The Hub Stage, Perdana Garden, The District, Level 2,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            <h4>Directors’ Reception (by invitation)</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">6:00–9:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Alle Lounge on 66,&nbsp;</span> Resorts World Las Vegas</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Día 3 --> 
+                <div class="accordionItem agenda_box" id="day3">
+                    <div class="accordionHeader">
+                        <h3>FRIDAY</h3>
+                        <div class="display_flex a_i_center">
+                            <p>August 22, 2025</p>
+                            <span class="accordionIcon"></span>
+                        </div>
+                    </div>
+                    <div class="accordionContent">
+                        <div> 
+                            <h4>The MONAT HUB</h4> 
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">8:00 a.m.– 8:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Perdana Garden, The District, Level 2,&nbsp;</span> Resorts World Las Vegas</p>
+        
+                            <h4>Badge Pickup</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">8:00 a.m.–7:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Perdana Garden, The District, Level 2,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            
+                            <h4>GEAR Store</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">7:00 a.m.–8:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>RW Theatre Store, Level 1,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            <h4>General Session</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">9:00 a.m.–12:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Resort World Theatre, Level 1,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            <h4>General Session</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">2:00–5:30 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Resort World Theatre, Level 1,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                             <h4>Men of MONAT</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">6:00–8:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>The Hub Stage, Perdana Garden, The District, Level 2,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                        </div>
+                    </div>
+                </div>
+               
+                
+                <!-- Día 4 -->
+                <div class="accordionItem agenda_box" id="day4">
+                    <div class="accordionHeader">
+                        <h3>SATURDAY</h3>
+                        <div class="display_flex a_i_center">
+                            <p>August 23, 2025</p>
+                            <span class="accordionIcon"></span>
+                        </div>
+                    </div>
+                    <div class="accordionContent">
+                        <div> 
+                            <h4>The MONAT HUB</h4> 
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">8:00 a.m.–8:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Perdana Garden, The District, Level 2,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            <h4>Badge Pickup</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">8:00 a.m.–3:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Perdana Garden, The District, Level 2,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            <h4>GEAR Store</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">8:00 a.m.–7:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>RW Theatre Store, Level 1,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            <h4>General Session</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">9:00 a.m.–12:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Resort World Theatre, Level 1,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            <h4>General Session</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">2:00–4:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Resort World Theatre, Level 1,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            <h4>Dream Bigger Gala</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">6:00–7:30 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Resort World Theatre, Level 1,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+        
+                            <h4>Dream Bigger: After-Party (Must be 21+ with government identification. Event badge required for entry)</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">7:30–10:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Zouk Nightclub + Ayu Dayclub, The District, Level 1,&nbsp;</span> Resorts World Las Vegas</p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Día 5 -->
+                <div class="accordionItem agenda_box" id="day5">
+                    <div class="accordionHeader">
+                        <h3>SUNDAY</h3>
+                        <div class="display_flex a_i_center">
+                            <p>August 24, 2025</p>
+                            <span class="accordionIcon"></span>
+                        </div>
+                    </div>
+                    <div class="accordionContent">
+                        <div> 
+                            <h4>The MONAT HUB</h4> 
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">8:00 a.m.–12:00 p.m.</p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>Perdana Garden, The District, Level 2&nbsp;</span> Resorts World Las Vegas</p>
+        
+                            <h4>Sunday Service (optional)</h4>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy">10:00–11:30 a.m. </p>
+                            <p><img decoding="async" src="https://monatglobal.com/wp-content/uploads/2025/06/location.svg" alt="location icon" loading="lazy"><span>The Hub Stage, Perdana Garden, The District, Level 2,&nbsp;</span> Resorts World Las Vegas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="https://monations.com/wp-content/uploads/2025/06/PROPERTY-MAP-1.pdf" target="_blank" aria-label="download venue map" class="monations_btn blue margin_auto margin_top_30">SEE VENUE MAP</a> 
+        </section>
+        
+        <section id="travel-details">
+            <!--<img style="position: absolute;-->
+            <!--top: 0;-->
+            <!--width: 100%;" src="https://monatglobal.com/wp-content/uploads/2025/06/monations-25-pattern-background-main-min-copy.jpg">-->
+            <!--<img style="position: absolute;-->
+            <!--bottom: 0;-->
+            <!--width: 100%;" src="https://monatglobal.com/wp-content/uploads/2025/06/monations-25-pattern-background-main-min-copy.jpg">-->
+            
+
+            <h2 class="section_title txt_center">TRAVEL <br>DETAILS</h2>
+            <div class="three_cols_row margin_auto margin_top_medium">
+                <div class="three_cols_item">
+                    <img src="https://monatglobal.com/wp-content/uploads/2025/06/time-zone-icon.svg" alt="watch icon" loading="lazy"> 
+                    <p class="title">TIME ZONE</p>
+                    <p>Las Vegas Time Zone: Pacific Time&nbsp;(PT) </p>
+                </div>
+                <div class="three_cols_item">
+                    <img src="https://monatglobal.com/wp-content/uploads/2025/06/weather-icon.svg" alt="Weather icon" loading="lazy">
+                    <p class="title">WEATHER</p>
+                    <p>Las Vegas Weather <br>  <a href="https://weather.com/weather/tenday/l/3596b03055bd29ff49e6c1029be17b4b30a271924238ae25e8dd622e1be5c4ff" target="_blank"><span class="learn_more">LEARN MORE</span></a></p>
+                </div> 
+                <div class="three_cols_item">
+                    <img src="https://monatglobal.com/wp-content/uploads/2025/06/airports-icon.svg" alt="airport icon" loading="lazy">
+                    <p class="title">RECOMMENDED <br>AIRPORTS</p>
+                    <p>Harry Reid International Airport (LAS)<br><a href="https://www.harryreidairport.com/" target="_blank"><span class="learn_more">LEARN MORE</span></a></p>
+                </div>
+            </div>
+
+        </section>
+        
+        <div id="recognition-period">
+            <section id="recognition">
+                <h2 class="section_title txt_center txt_w">Ready to Shine <br> on Stage?</h2> 
+                <h3 class="margin_top_40">RECOGNITION CATEGORIES:</h3>
+                <div class="categories_grid col_80 col_90_tablet col_100_mobile margin_auto margin_top_40">
+                    <div class="categories_item">
+                        <img src="https://monatglobal.com/wp-content/uploads/2018/05/01.-Managing-market-partner.png" alt="oil drop logo" loading="lazy">
+                        <p>Top Personal Sponsoring (Partner, Builder, Mentor, Director Group)</p>
+                    </div>
+                    <div class="categories_item">
+                        <img src="https://monatglobal.com/wp-content/uploads/2018/05/01.-Managing-market-partner.png" alt="oil drop logo" loading="lazy">
+                        <p>Top VIP Enrollment (Partner, Builder, Mentor, Director Group)</p>
+                    </div>
+                    <div class="categories_item">
+                        <img src="https://monatglobal.com/wp-content/uploads/2018/05/01.-Managing-market-partner.png" alt="oil drop logo" loading="lazy">
+                        <p>Top Super Sellers (Partner, Builder, Mentor, Director Group)</p>
+                    </div>
+                    <div class="categories_item">
+                        <img src="https://monatglobal.com/wp-content/uploads/2018/05/01.-Managing-market-partner.png" alt="oil drop logo" loading="lazy">
+                        <p>Most Promoted Out MMPs (Partner, Builder, Mentor, Director Group)</p>
+                    </div>
+                    <div class="categories_item">
+                        <img src="https://monatglobal.com/wp-content/uploads/2018/05/01.-Managing-market-partner.png" alt="oil drop logo" loading="lazy">
+                        <p>New Directors</p>
+                    </div>
+                    <div class="categories_item">
+                        <img src="https://monatglobal.com/wp-content/uploads/2018/05/01.-Managing-market-partner.png" alt="oil drop logo" loading="lazy">
+                        <p>New 1, 5, 10, and 15 MDC Members</p>
+                    </div>
+                    <div class="categories_item">
+                        <img src="https://monatglobal.com/wp-content/uploads/2018/05/01.-Managing-market-partner.png" alt="oil drop logo" loading="lazy"> 
+                        <p>Top Global Income Earners</p>
+                    </div>
+                    <div class="categories_item">
+                        <img src="https://monatglobal.com/wp-content/uploads/2018/05/01.-Managing-market-partner.png" alt="oil drop logo" loading="lazy">
+                        <p>Special Award Earners: CEO Award, Chairman Award, and Rookie of the Year</p> 
+                    </div>
+                </div>
+            </section>
+            
+            <section id="q_period">
+                <div>
+                    <h2 class="medium_txt txt_center" style="color: var(--dark-blue)">Qualification period <br class="hide_mobile">for above categories is <br class="hide_mobile">August 1, 2024–July 31, 2025</h2>
+                    
+                    <div class="three_cols_row margin_auto margin_top_40">
+                        <div class="three_cols_item">
+                            <img src="https://monatglobal.com/wp-content/uploads/2025/06/medal-icon-.svg" alt="medal icon" loading="lazy"> 
+                            <p>Parades for 100K Club, Motor Club, and MDC Members</p>
+                        </div>
+                        <div class="three_cols_item">
+                            <img src="https://monatglobal.com/wp-content/uploads/2025/06/star-icon.svg" alt="star icon">
+                            <p>Standing recognition for birthdays, all ranks, Legacy Founders, Emerging Founders, Visionary Founders, European Founders, and Asia-Pacific Founders</p>
+                        </div>
+                        <div class="three_cols_item">
+                            <img src="https://monatglobal.com/wp-content/uploads/2025/06/gift-icon.svg" alt="Surprises icon" loading="lazy">
+                            <p>More Surprises!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section id="footer" class="txt_center padding_y_medium">
+            <img class="logo_footer_monations" src="https://monatglobal.com/wp-content/uploads/2025/06/MONATions-2025-logo-cream.svg" alt="MONATions 2025 logo cream" loading="lazy">
+            
+            <img decoding="async" class="currentLocation display_block margin_auto margin_top_40" alt="UNITED STATES flag" src="https://monatglobal.com/au/wp-content/uploads/sites/12/2022/07/usa-falg.jpg" loading="lazy" >
+             
+            <ul id="footer__nav" class="display_flex flex_wrap a_i_center txt_w margin_auto j_c_center margin_top_40 scrollLinks">
+                <li data-link="venue">VENUE</li>
+                <li data-link="agenda">AGENDA</li>
+                <li data-link="speakers">SPEAKERS</li>
+                <li data-link="rooms">ROOMS</li>
+                <li data-link="flights">FLIGHTS</li>
+                <li data-link="recognition">RECOGNITION</li>
+                <a href="https://monat.swoogo.com/MU25" target="_blank" class="monations_btn blue">REGISTER</a>
+
+            </ul>
+            
+            <div id="social_row" class="display_flex a_i_center j_c_center margin_top_40">
+                <a href="https://www.instagram.com/monatofficial/" target="_blank" aria-label="Monat global instagram" loading="lazy">
+                    <img decoding="async" alt="instagram icon" class="social_icons" src="https://monatglobal.com/wp-content/uploads/2022/08/instagramIcon.svg" loading="lazy">
+                </a>
+                <a href="https://www.facebook.com/monatofficial" target="_blank" aria-label="Monat global facebook" loading="lazy">
+                    <img decoding="async" alt="facebook icon" class="social_icons" src="https://monatglobal.com/wp-content/uploads/2022/08/facebookIcon.svg" loading="lazy">
+                </a>
+                <a href="https://www.youtube.com/user/MONATOfficial" target="_blank" aria-label="Monat global youtube">
+                    <img decoding="async" alt="youtube icon" class="social_icons" src="https://monatglobal.com/wp-content/uploads/2022/08/youtubeIcon.svg" loading="lazy">
+                </a>
+            </div>
+            
+            <a class="underline_links travel_link margin_auto margin_top_30" data-link="travel-details">TRAVEL DETAILS</a>
+            <a href="https://monations.com/wp-content/uploads/2025/06/PROPERTY-MAP-1.pdf" target="_blank" aria-label="download venue map" class="underline_links margin_auto">SEE VENUE MAP</a>
+            
+            <a class="legal_links margin_top_30" href="https://monations.com/wp-content/uploads/2025/03/US_ENG_MU25-FAQs-2725_V5-1.pdf" target="_blank">FAQ</a>
+            <a class="legal_links" href="https://monations.com/wp-content/uploads/2024/09/US_ENG_MONATions_2025_Terms__Conditions_09092024_V6.pdf" target="_blank">TERMS & CONDITIONS</a>
+                                            <a class="tagNew legal_links" style="color:#fff" target="_blank" href="http://monations.com/wp-content/uploads/2025/08/US_ENG_MU25-Prohibited-items-81225_V6.pdf">BAG POLICY</a>
+        </section>
+    </div>
+</div>
+ 
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> 
+<script src="https://monatglobal.com/wp-content/creative_js/liteboxpro_gsap.min.js"></script> 
+<script src="https://monatglobal.com/wp-content/creative_js/gsap/ScrollTrigger.min.js"></script>
+<script src="https://monatglobal.com/wp-content/creative_js/gsap/ScrollSmoother.min.js"></script> 
